@@ -1,7 +1,7 @@
-defmodule NervesSystemRpi0.Mixfile do
+defmodule NervesSystemRpi0Zbar.Mixfile do
   use Mix.Project
 
-  @app :nerves_system_rpi0
+  @app :nerves_system_rpi0_zbar
   @version Path.join(__DIR__, "VERSION")
     |> File.read!
     |> String.trim
@@ -30,7 +30,7 @@ defmodule NervesSystemRpi0.Mixfile do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
+        {:github_releases, "aaronrenner/#{@app}"}
       ],
       platform: Nerves.System.BR,
       platform_config: [
@@ -51,16 +51,16 @@ defmodule NervesSystemRpi0.Mixfile do
 
   defp description do
     """
-    Nerves System - Raspberry Pi Zero and Zero W
+    Nerves System - Raspberry Pi Zero and Zero W with Zbar (barcode tools)
     """
   end
 
   defp package do
     [
-      maintainers: ["Timothy Mecklem", "Frank Hunleth"],
+      maintainers: ["Aaron Renner"],
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"Github" => "https://github.com/aaronrenner/#{@app}"}
     ]
   end
 
